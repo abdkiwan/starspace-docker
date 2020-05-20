@@ -1,0 +1,18 @@
+
+1- build the image:
+docker build -t mystarspace .
+
+2- run the image:
+docker run --name starspace -p 8080:4000 mystarspace
+
+3- run the model, and generate predictions:
+The folders patents/publications contain the trained models with 4 test files. To run the model and generate the
+predictions files, please go to the following urls using any browser.
+http://127.0.0.1:8080/publications
+http://127.0.0.1:8080/patents
+
+4- To copy the prediction files from the container:
+sudo docker cp starspace:publications_preds_1.txt /dir/to/dest
+sudo docker cp starspace:publications_preds_2.txt /dir/to/dest
+sudo docker cp starspace:patentss_preds_1.txt /dir/to/dest
+sudo docker cp starspace:patents_preds_2.txt /dir/to/dest
